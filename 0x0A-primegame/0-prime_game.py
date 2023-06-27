@@ -26,19 +26,19 @@ def isWinner(x, nums):
         x (int): no. of rounds of game
         nums (int): upper limit of range for each round
     Return:
-        Name of winner (Marian or Benson) or None if winner cannot be found
+        Name of winner (Maria or Ben) or None if winner cannot be found
     """
     if x is None or nums is None or x == 0 or nums == []:
         return None
-    Marian = Benson = 0
+    Maria = Ben = 0
     for i in range(x):
         primeNos = primeNumbers(nums[i])
         if len(primeNos) % 2 == 0:
-            Benson += 1
+            Ben += 1
         else:
-            Marian += 1
-    if Marian > Benson:
-        return 'Marian'
-    elif Benson > Marian:
-        return 'Benson'
+            Maria += 1
+    if Maria > Ben:
+        return 'Maria'
+    elif Ben > Maria:
+        return 'Ben'
     return None
